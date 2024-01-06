@@ -7,11 +7,11 @@ const createWindow = () => {
     width: 800,
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, './preload.js')
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile(path.join(__dirname, 'views', 'index.html'))
 }
 
 app.whenReady().then(() => {

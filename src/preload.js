@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const imageFolder = "./img"
+// const imageFolder = "./src/assets/img"
+const imageFolder = path.join(__dirname, 'assets', 'img')
 const images = fs.readdirSync(imageFolder).filter(file => {
   return file.toLowerCase().match(/\.(jpg|jpeg|png|gif)$/)
 })
@@ -14,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (imageContainer) {
     images.forEach(image => {
       const imgElement = document.createElement('img');
-      imgElement.src = `./img/${image}`;
+      imgElement.src = `${imageFolder}/${image}`;
 
       //add style to each image
       imgElement.style.width = '200px'
